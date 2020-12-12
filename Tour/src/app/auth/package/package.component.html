@@ -1,0 +1,47 @@
+<div class="container d-flex justify-content-center">
+    <form class="form-signin form-content-width border border-light p-5 " style="width: 50%;"
+     [formGroup]="packageForm" >
+
+    <h1 class="h3 mb-3 font-weight-normal text-center"><b>Package_Details</b></h1>
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col">
+            Package Name:<input type="text" id="pname" [formControlName]="'pname'" placeholder="" class=" form-control mb-2">  
+            <div *ngIf="packageForm.get('pname').touched">
+                <label *ngIf="packageForm.get('pname').hasError('required')" style="font-size: 16px; color: red;">Name Field is required</label>
+            
+            </div>
+                </div>
+            
+                <div class="col">
+            Package Location<input type="text" id="plocation" [formControlName]="'plocation'" placeholder="" class=" form-control mb-2">  
+            <div *ngIf="packageForm.get('plocation').touched">
+                <label *ngIf="packageForm.get('plocation').hasError('required')" class="text-danger warning-messages" >Package Location Field is required</label>
+        </div></div>
+</div>
+    </div>
+    <div>
+        
+            <div>
+        Package Type<input type="text" id="ptype" [formControlName]="'ptype'" placeholder=""  class=" form-control mb-2">  
+        <div *ngIf="packageForm.get('ptype').touched">
+            <label *ngIf="packageForm.get('ptype').hasError('required')" class="text-danger warning-messages">Package type Field is required</label>
+    </div></div>
+</div>
+
+        <div>
+            Price<input type="text" id="price" [formControlName]="'price'" placeholder="" class=" form-control mb-2">
+            <div *ngIf="packageForm.get('price').touched">
+                <label *ngIf="packageForm.get('price').hasError('required')" class="text-danger warning-messages" >
+        Price field is required</label>
+            </div>
+        </div>
+        
+        
+        
+
+        <button class="btn btn-primary btn-block mt-4 " type="submit" [disabled]="!packageForm.valid">Package_Details</button>
+        
+    </form>
+</div>
+
